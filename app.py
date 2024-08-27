@@ -1,7 +1,5 @@
 import streamlit as st
-import tiktoken
 from loguru import logger
-from operator import itemgetter
 
 from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_community.document_loaders import Docx2txtLoader
@@ -12,15 +10,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.output_parsers import StrOutputParser
 
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-
-from langchain.chains import create_history_aware_retriever, create_retrieval_chain
-from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.runnables import RunnablePassthrough
-
-# from streamlit_chat import message
-from langchain.callbacks import get_openai_callback
-from langchain.memory import StreamlitChatMessageHistory
 
 
 def main():
